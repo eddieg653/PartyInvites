@@ -1,0 +1,51 @@
+﻿
+@model GuestResponse
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title> Rsvp Form </title>
+    <link href="~/css/styles.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <h5 class="bg-primary text-white text-center m-2 p-2">
+        RSVP
+    </h5>
+
+    <form method="post"class="m-2">
+        <div id="error-message-div" asp-validation-summary="All">
+        </div>
+        <div class="form-group">
+            Name:
+            <input asp-for="Name" class="form-control" placeholder=" Your Name" />
+        </div>
+        <div class="form-group">
+            Email:
+            <input asp-for="Email" class="form-control" placeholder="Email" />
+        </div>
+        <div>
+            Phone:
+            <input asp-for="Phone" class="form-control" placeholder="Phone Number" />
+        </div>
+        <div>
+            Are You Attending:
+            <select asp-for="WillAttend" class="form-control">
+                <option value=""> Choose an option </option>
+                <option value="true"> Yes </option>
+                <option value="false"> No </option>
+                <option value=""> Maybe </option>
+            </select>
+        </div>
+        <div class="text-center">
+            <input type="submit" class="btn btn-warning" value="RSVP Me" />
+        </div>
+    </form>
+</body>
+</html>

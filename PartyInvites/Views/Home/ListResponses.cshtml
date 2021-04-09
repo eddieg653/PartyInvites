@@ -1,0 +1,46 @@
+﻿@model List<GuestResponse>
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title> Responses </title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="text-center">
+        <h2> Here is the list of people attending the party </h2>
+
+        <table class="table table-striped table-sm">
+            <thead>
+                <tr>
+                    <th> Name </th>
+                    <th> Email </th>
+                    <th> Phone </th>
+                </tr>
+            </thead>
+            <tbody>
+                @*foreach (PartyInvites.Models.GuestResponse response in Model)*@
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    if (Model[i].WillAttend == true)
+                    {
+                        <tr>
+                            <td> @Model[i].Name </td>
+                            <td> @Model[i].Email </td>
+                            <td> @Model[i].Phone </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
